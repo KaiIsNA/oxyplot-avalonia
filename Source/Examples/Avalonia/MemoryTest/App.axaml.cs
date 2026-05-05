@@ -35,9 +35,9 @@ namespace MemoryTest
         {
             OxyPlotModule.EnsureLoaded();
             var builder = AppBuilder.Configure<App>()
-                .UsePlatformDetect()
+                .UsePlatformDetect();
 #if DEBUG
-                .LogToTrace();
+            builder.LogToTrace();
 #endif
             return builder;
         }
