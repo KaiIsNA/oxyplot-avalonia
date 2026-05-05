@@ -33,11 +33,12 @@ namespace AvaloniaExamples
         public static AppBuilder BuildAvaloniaApp()
         {
             OxyPlotModule.EnsureLoaded();
-            return AppBuilder.Configure<App>().UseSkia()
+            var builder = AppBuilder.Configure<App>().UseSkia()
                 .UsePlatformDetect()
 #if DEBUG
                 .LogToTrace();
 #endif
+            return builder;
         }
 
         public static void Main(string[] args)

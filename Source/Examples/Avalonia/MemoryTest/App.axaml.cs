@@ -34,11 +34,12 @@ namespace MemoryTest
         public static AppBuilder BuildAvaloniaApp()
         {
             OxyPlotModule.EnsureLoaded();
-            return AppBuilder.Configure<App>()
+            var builder = AppBuilder.Configure<App>()
                 .UsePlatformDetect()
 #if DEBUG
                 .LogToTrace();
 #endif
+            return builder;
         }
 
         public static void Main(string[] args)
